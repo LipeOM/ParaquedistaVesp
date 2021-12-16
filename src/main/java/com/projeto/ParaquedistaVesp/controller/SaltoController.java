@@ -1,12 +1,10 @@
 package com.projeto.ParaquedistaVesp.controller;
 
+import com.projeto.ParaquedistaVesp.Mensagem;
 import com.projeto.ParaquedistaVesp.entities.Salto;
 import com.projeto.ParaquedistaVesp.repositories.SaltoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +24,15 @@ public class SaltoController {
     public Salto buscar (@PathVariable int id) {
         Salto salto = saltoRepository.findById(id).get();
         return salto;
+    }
+
+    @PostMapping
+    public Mensagem incluir (@RequestBody Salto salto) {
+        salto.setId(0);
+        saltoRepository.save(salto);
+        saltoRepository.flush();
+        Mensagem msg = new Mensagem();
+        msg.setMensagem("Incluido com sucesso");
+        return msg;
     }
 }
