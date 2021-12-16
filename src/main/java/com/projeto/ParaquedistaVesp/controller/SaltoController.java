@@ -35,4 +35,13 @@ public class SaltoController {
         msg.setMensagem("Incluido com sucesso");
         return msg;
     }
+
+    @PutMapping
+    public Mensagem alterar (@RequestBody Salto salto) {
+        saltoRepository.save(salto);
+        saltoRepository.flush();
+        Mensagem msg = new Mensagem();
+        msg.setMensagem("Alterado com sucesso");
+        return msg;
+    }
 }
