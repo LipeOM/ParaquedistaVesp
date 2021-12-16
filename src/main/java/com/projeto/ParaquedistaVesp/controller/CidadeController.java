@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("cidade")
-public class CidadeConntroller {
+public class CidadeController {
 
     @Autowired
     private CidadeRepository cidadeRepository;
