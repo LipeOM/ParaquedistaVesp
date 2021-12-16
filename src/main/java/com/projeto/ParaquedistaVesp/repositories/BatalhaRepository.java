@@ -7,5 +7,5 @@ import java.util.List;
 
 
 public interface BatalhaRepository extends JpaRepository<Batalha, Integer> {
-    List<Batalha> findByativo(Boolean ativo)
+    List<Batalha> findByativo(Boolean ativo);
 }
