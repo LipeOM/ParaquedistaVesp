@@ -3,7 +3,7 @@ package com.projeto.ParaquedistaVesp.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="ciadade")
+@Table(name="cidade")
 public class Cidade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
