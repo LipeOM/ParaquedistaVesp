@@ -21,6 +21,9 @@ public class Batalha {
     @Column(name="ativo")
     private Boolean ativo;
 
+    @Column(name="id_cidade")
+    private Integer idCidade;
+
     public Boolean getAtivo() {
         return ativo;
     }
@@ -51,5 +54,13 @@ public class Batalha {
 
     public void setData(Date data) {
         this.data = data;
+    }
+
+    public Integer getIdCidade() {
+        return idCidade;
+    }
+
+    public void setIdCidade(Integer idCidade) {
+        this.idCidade = idCidade;
     }
 }
