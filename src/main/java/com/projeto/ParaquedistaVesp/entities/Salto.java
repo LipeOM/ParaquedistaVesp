@@ -15,6 +15,9 @@ public class Salto {
     @Column(name = "data")
     private Date data;
 
+    @Column(name = "ativo")
+    private Boolean ativo;
+
     @Column(name = "id_batalha")
     private Integer idBatalha;
 
@@ -34,6 +37,13 @@ public class Salto {
         this.data = data;
     }
 
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
     public Integer getIdBatalha() {
         return idBatalha;
     }

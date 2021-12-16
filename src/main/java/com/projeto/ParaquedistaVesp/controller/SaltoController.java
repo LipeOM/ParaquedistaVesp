@@ -44,4 +44,14 @@ public class SaltoController {
         msg.setMensagem("Alterado com sucesso");
         return msg;
     }
+
+    @DeleteMapping
+    public Mensagem deletar (@RequestBody Salto salto) {
+        salto.setAtivo(false);
+        saltoRepository.save(salto);
+        saltoRepository.flush();
+        Mensagem msg = new Mensagem();
+        msg.setMensagem("Deletado com sucesso");
+        return msg;
+    }
 }
