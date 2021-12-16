@@ -37,6 +37,25 @@ public class BatalhaController {
         msg.setMensagem("Inserido!!");
         return msg;
     }
+    @PutMapping
+    public Mensagem alterar (@RequestBody Batalha batalha){
+        batalhaRepository.save(batalha);
+        batalhaRepository.flush();
+        Mensagem msg = new Mensagem();
+        msg.setMensagem("Alterado!!");
+        return msg;
+    }
+    @DeleteMapping
+    public Mensagem deletar (@RequestBody Batalha batalha){
+        batalha.setAtivo(false);
+        batalhaRepository.save(batalha);
+        batalhaRepository.flush();
+
+        Mensagem msg = new Mensagem();
+        msg.setMensagem("Deletado");
+        return msg;
+    }
+
 
 
 

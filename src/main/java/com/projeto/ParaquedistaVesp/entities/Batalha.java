@@ -18,6 +18,17 @@ public class Batalha {
     @Column(name="data")
     private Date data;
 
+    @Column(name="ativo")
+    private Boolean ativo;
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
+
     public Integer getId() {
         return id;
     }
